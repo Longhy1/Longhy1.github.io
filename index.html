@@ -5,10 +5,331 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>殷汉的个人网站</title>
+    <style>
+        body {
+            background-image: url('web-backgroud-img2.png');
+            /* 背景图片是否重复 */
+            background-repeat: no-repeat;
+
+            /* 背景图片的尺寸 */
+            background-size: cover;
+            /* 或者你可以使用 'contain', 'auto', 或者具体的宽度和高度 */
+
+            /* 背景图片的位置 */
+            background-position: center center;
+            /* 可以是 'top', 'bottom', 'left', 'right', 或者具体的百分比或像素值 */
+
+            /* 背景图片的固定 */
+            background-attachment: fixed;
+            /* 或者 'scroll'，如果不想背景图片固定 */
+
+            background-color: white;
+        }
+
+        body,
+        h1,
+        p,
+        a {
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* 导航栏样式 */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-sizing: border-box;
+        }
+
+        /* 导航链接样式 */
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            font-size: 16px;
+        }
+
+        .nav-links a:hover {
+            color: #dedede;
+        }
+
+        /* 名字居中显示 */
+        .nav-name {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        /* 搜索框样式 */
+        .nav-search {
+            display: flex;
+            gap: 10px;
+        }
+
+        .nav-search input {
+            padding: 5px;
+            border: none;
+            border-radius: 3px;
+        }
+
+        .nav-search button {
+            padding: 5px 10px;
+            background-color: #555;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .nav-search button:hover {
+            background-color: #777;
+        }
+
+        /* 内容部分样式 */
+        .content {
+            margin-top: 70px;
+            /* 确保内容不被导航栏遮挡 */
+            padding: 20px;
+        }
+
+
+
+        #welcome1 {
+            color: white;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        #sen1 {
+            font-weight: 400;
+            margin: 5px;
+        }
+
+        #sen2 {
+            font-weight: 400;
+            margin: 5px;
+        }
+
+
+
+
+
+        /* 链接分类的大框 */
+        .link-category {
+            border: 1px solid #ddd;
+            /* 为分类框添加1像素的灰色边框 */
+            margin-left: 15%;
+            margin-right: 15%;
+            margin-top: 10px;
+            /* 在分类框的外围添加20像素的边距 */
+            padding: 10px;
+            /* 在分类框的内侧添加10像素的内边距 */
+            border-radius: 10px;
+            /* 为分类框添加5像素的圆角边框 */
+            background-color: #ffffff;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        /* 设置分类标题的样式 */
+        .category-title {
+            text-align: center;
+            /* 将标题文本居中显示 */
+            font-size: 24px;
+            /* 设置标题的字体大小为24像素 */
+            font-weight: 500;
+            margin-top: 0px;
+            margin-bottom: 10px;
+            /* 在标题下方添加10像素的底部边距 */
+            color: white;
+        }
+
+        /* 设置链接框的容器 */
+        .links {
+            /* 使用flex布局 */
+            display: flex;
+            /* 设置flex项在交叉轴上的对齐方式 */
+            align-items: center;
+            /* 设置flex项在主轴上的对齐方式 */
+            justify-content: left;
+            /* 设置flex项之间的间距 */
+            flex-wrap: wrap;
+        }
+
+        /* 设置链接框的样式，使其成为块级元素 */
+        .link-box {
+            /* 设置宽度 */
+            width: 240px;
+            /* 设置高度 */
+            height: 50px;
+            /* 设置边框样式 */
+            border: 1px solid #ddd;
+            /* 设置圆角边框 */
+            border-radius: 5px;
+            /* 设置内边距 */
+            padding: 10px;
+            /* 设置文本居左 */
+            text-align: left;
+            /* 设置背景颜色 */
+            background-color: #fff;
+            /* 设置显示方式为块级元素 */
+            display: flex;
+            /* 设置过渡效果 */
+            transition: transform 0.3s ease;
+            margin: 5px;
+            font-size: 22px;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* 设置链接的样式 */
+        .links-list a {
+            text-decoration: none;
+            /* 移除链接的下划线 */
+            color: rgb(7, 10, 12);
+            /* 设置链接文本的颜色为蓝色 */
+        }
+
+        /* 当鼠标悬停在链接框上时改变样式 */
+        .link-box:hover {
+            /* 改变变换属性，使链接框轻微上移 */
+            transform: translateY(-5px);
+        }
+
+        /* 为链接图标设置样式 */
+        .link-icon {
+            /* 设置宽度 */
+            width: 50px;
+            /* 设置高度 */
+            height: 50px;
+            /* 设置下边距 */
+            margin-bottom: 5px;
+        }
+
+        .link-name {
+            /* 和图片的间隔 */
+            margin-left: 20px;
+            /* 字体粗细 */
+            font-weight: 300;
+        }
+    </style>
 </head>
 
 <body>
-    <h1>欢迎来到殷汉网</h1>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-links">
+            <a href="#home">首页</a>
+            <a href="#commomlink">常用网址</a>
+            <a href="#aboutme">关于我</a>
+        </div>
+        <div class="nav-name">
+            <span>YinHan</span>
+        </div>
+        <div class="nav-search">
+            <input type="text" placeholder="搜索……">
+            <button type="submit">搜索</button>
+        </div>
+    </nav>
+
+    <div id="home">
+        <br><br><br>
+    </div>
+
+    <div id="welcome1">
+        <h1 id="sen1">欢迎来到我的个人网站</h1>
+        <h1 id="sen2">这是我的一些常用网址</h1>
+    </div>
+
+    <div id="commomlink">
+        <div class="link-category">
+            <h2 class="category-title">学习资源</h2>
+            <div class="links">
+                <a href="https://web.shanbay.com/codetime-study/home/app/courses" target="_blank" class="link-box">
+                    <img src="icon1.png" alt="扇贝编程" class="link-icon">
+                    <span class="link-name">扇贝编程</span>
+                </a>
+                <a href="https://leetcode.cn/" target="_blank" class="link-box">
+                    <img src="icon2.png" alt="力扣" class="link-icon">
+                    <span class="link-name">力扣</span>
+                </a>
+                <a href="https://programmercarl.com/" target="_blank" class="link-box">
+                    <img src="icon3.png" alt="代码随想录" class="link-icon">
+                    <span class="link-name">代码随想录</span>
+                </a>
+                <a href="https://www.csdn.net/" target="_blank" class="link-box">
+                    <img src="icon4.png" alt="CSDN" class="link-icon">
+                    <span class="link-name">CSDN</span>
+                </a>
+                <a href="https://www.lanqiao.cn/" target="_blank" class="link-box">
+                    <img src="icon5.png" alt="蓝桥云课" class="link-icon">
+                    <span class="link-name">蓝桥云课</span>
+                </a>
+                <a href="https://www.luogu.com.cn/" target="_blank" class="link-box">
+                    <img src="icon6.png" alt="洛谷" class="link-icon">
+                    <span class="link-name">洛谷</span>
+                </a>
+            </div>
+        </div>
+        <div class="link-category">
+            <h2 class="category-title">西南交大</h2>
+            <div class="links">
+                <a href="https://www.swjtu.edu.cn/" target="_blank" class="link-box">
+                    <img src="icon7.png" alt="交大官网" class="link-icon">
+                    <span class="link-name">交大官网</span>
+                </a>
+                <a href="https://etp.swjtu.edu.cn/user/yethan/index" target="_blank" class="link-box">
+                    <img src="icon8.png" alt="实验教学管理系统" class="link-icon">
+                    <span class="link-name">实验教学管理系统</span>
+                </a>
+                <a href="https://scai.swjtu.edu.cn/index.html" target="_blank" class="link-box">
+                    <img src="icon9.png" alt="学院官网" class="link-icon">
+                    <span class="link-name">学院官网</span>
+                </a>
+                <a href="http://xg.swjtu.edu.cn/web?tdsourcetag=s_pcqq_aiomsg" target="_blank" class="link-box">
+                    <img src="icon10.png" alt="扬华素质网" class="link-icon">
+                    <span class="link-name">扬华素质网</span>
+                </a>
+            </div>
+        </div>
+        <div class="link-category">
+            <h2 class="category-title">其余常用</h2>
+            <div class="links">
+                <a href="https://github.com/" target="_blank" class="link-box">
+                    <img src="icon11.png" alt="GitHub" class="link-icon">
+                    <span class="link-name">GitHub</span>
+                </a>
+                <a href="https://www.google.com.hk/webhp?hl=zh-CN&sourceid=cnhp" target="_blank" class="link-box">
+                    <img src="icon12.png" alt="Google" class="link-icon">
+                    <span class="link-name">Google</span>
+                </a>
+                <a href="https://wx.mail.qq.com/list/readtemplate?name=account_list.html" target="_blank"
+                    class="link-box">
+                    <img src="icon13.png" alt="QQ邮箱" class="link-icon">
+                    <span class="link-name">QQ邮箱</span>
+                </a>
+                <a href="https://www.youtube.com/" target="_blank" class="link-box">
+                    <img src="icon14.png" alt="Youtube" class="link-icon">
+                    <span class="link-name">Youtube</span>
+                </a>
+            </div>
+        </div>
+
+    </div>
 </body>
 
 </html>
