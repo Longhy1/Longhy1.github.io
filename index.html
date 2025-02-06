@@ -116,17 +116,10 @@
         }
 
         #sen1 {
-            font-weight: 400;
+            font-weight: 300;
             margin: 5px;
+            letter-spacing: 8px;
         }
-
-        #sen2 {
-            font-weight: 400;
-            margin: 5px;
-        }
-
-
-
 
 
         /* 链接分类的大框 */
@@ -147,13 +140,14 @@
 
         /* 设置分类标题的样式 */
         .category-title {
-            text-align: center;
+            text-align: left;
             /* 将标题文本居中显示 */
-            font-size: 24px;
+            font-size: 25px;
             /* 设置标题的字体大小为24像素 */
             font-weight: 500;
             margin-top: 0px;
             margin-bottom: 10px;
+            margin-left: 30px;
             /* 在标题下方添加10像素的底部边距 */
             color: white;
         }
@@ -173,7 +167,7 @@
         /* 设置链接框的样式，使其成为块级元素 */
         .link-box {
             /* 设置宽度 */
-            width: 240px;
+            width: 255px;
             /* 设置高度 */
             height: 50px;
             /* 设置边框样式 */
@@ -190,7 +184,7 @@
             display: flex;
             /* 设置过渡效果 */
             transition: transform 0.3s ease;
-            margin: 5px;
+            margin: 10px;
             font-size: 22px;
             align-items: center;
             background-color: rgba(255, 255, 255, 0.7);
@@ -227,6 +221,19 @@
             font-weight: 300;
         }
     </style>
+
+
+    <script>
+        function redirectToPage() {
+            var inputText = document.getElementById('searchInput').value; // 获取输入框的值
+            var specificText = "张芯莹"; // 你想检测的特定文本
+
+            if (inputText === specificText) {
+                // 如果输入的文本是特定文本，则跳转到指定页面
+                window.location.href = 'http://www.baidu.com';
+            }
+        }
+    </script>
 </head>
 
 <body>
@@ -241,8 +248,8 @@
             <span>YinHan</span>
         </div>
         <div class="nav-search">
-            <input type="text" placeholder="搜索……">
-            <button type="submit">搜索</button>
+            <input type="text" id="searchInput" placeholder="请输入文本">
+            <button type="submit" onclick="redirectToPage()">搜索</button>
         </div>
     </nav>
 
@@ -252,7 +259,6 @@
 
     <div id="welcome1">
         <h1 id="sen1">欢迎来到我的个人网站</h1>
-        <h1 id="sen2">这是我的一些常用网址</h1>
     </div>
 
     <div id="commomlink">
@@ -282,6 +288,14 @@
                 <a href="https://www.luogu.com.cn/" target="_blank" class="link-box">
                     <img src="icon6.png" alt="洛谷" class="link-icon">
                     <span class="link-name">洛谷</span>
+                </a>
+                <a href="https://chat.deepseek.com/" target="_blank" class="link-box">
+                    <img src="icon15.png" alt="DeepSeek" class="link-icon">
+                    <span class="link-name">DeepSeek</span>
+                </a>
+                <a href="https://chatglm.cn/main/alltoolsdetail?lang=zh" target="_blank" class="link-box">
+                    <img src="icon16.png" alt="智谱清言" class="link-icon">
+                    <span class="link-name">智谱清言</span>
                 </a>
             </div>
         </div>
